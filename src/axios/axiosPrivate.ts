@@ -2,6 +2,7 @@ import axios from "axios";
 
 const axiosPrivate = axios.create({
     baseURL:  "https://barbellate-insides-laney.ngrok-free.dev",
+    withCredentials: true,
 });
 
 axiosPrivate.interceptors.request.use(
