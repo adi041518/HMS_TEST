@@ -282,7 +282,31 @@ export const columnBillingMap: Record<
     { headerName: "Created By", field: "createdBy" },
     ...(onView || onUpdate || onDelete ? [actionColumn(onView, onUpdate, onDelete)] : []),
   ],
-  report: () => [],
+  report: (
+  onView?: ActionHandler,
+): ColDef[] => [
+  ...baseColumns,
+  { headerName: "Patient ID", field: "code" },
+  { headerName: "Doctor ID", field: "doctorId" },
+  { headerName: "Hospital ID", field: "hospitalId" },
+  { headerName: "Tenant ID", field: "tenantId" },
+  {
+    headerName: "Action",
+    field: "generate",
+    cellRenderer: (params: ICellRendererParams) => {
+      return (
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={() => {
+            onView && onView(params.data);
+          }}
+        >
+          Generate Report
+        </button>
+      );
+    },
+  },
+],
 
 };
 

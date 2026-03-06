@@ -3,7 +3,7 @@ import RoleGrid from "../components/roleGrid";
 import { fetchAllRolesApi, deleteRoleByIdApi } from "../axios/rolesApi";
 import NavbarComponent from "../components/navbar";
 import Menubar from "../components/menubar";
-import { menuRolesbar, type ModuleType } from "../config/menubar";
+import { menuRolesbar, type AppModuleType } from "../config/menubar";
 import { Modal, Button } from "react-bootstrap";
 import CreateRole from "./createRole";
 
@@ -12,7 +12,7 @@ const Role = () => {
     const menuBar = menuRolesbar[roleName] ?? [];
 
     const [selectedMenu, setSelectedMenu] = useState("");
-    const [module, setModule] = useState<ModuleType>("role");
+    const [module, setModule] = useState<AppModuleType>("role");
     const [roles, setRoles] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
 
@@ -42,7 +42,7 @@ const Role = () => {
     }, [roleName]);
 
     // 🔥 Menu Click Handler
-    const handleMenuClick = (title: string, mod: ModuleType) => {
+    const handleMenuClick = (title: string, mod: AppModuleType) => {
         setSelectedMenu(title);
         setModule(mod);
 
