@@ -39,7 +39,7 @@ function Login() {
                 await delay(1200);
                 setStatus("success");
                 localStorage.setItem("token", response.data.data.token);
-                localStorage.setItem("roleCode",response.data.data.code);
+                localStorage.setItem("code",response.data.data.code);
                 await delay(2000);
             if (response.data.data.reset == true) {
                     navigate("/reset-password");
