@@ -1,7 +1,7 @@
 import axios from "axios";
  
 const axiosPublic = axios.create({
-    baseURL:  `http://${window.location.hostname}:8080`, 
+    baseURL: "https://barbellate-insides-laney.ngrok-free.dev", 
     headers: {
         "Content-Type": "application/json",
     },

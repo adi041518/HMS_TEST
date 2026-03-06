@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPrivate = axios.create({
-    baseURL:  `http://${window.location.hostname}:8080`,
+    baseURL:  "https://barbellate-insides-laney.ngrok-free.dev",
 });
 
 axiosPrivate.interceptors.request.use(
