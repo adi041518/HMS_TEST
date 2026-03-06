@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { fetchAllMedicines } from "../axios/medicines";
 import {
   CreatePrescription,
-  UpdatePrescription,
+ 
 } from "../axios/receptionist";
 
 /* ================= TYPES ================= */
